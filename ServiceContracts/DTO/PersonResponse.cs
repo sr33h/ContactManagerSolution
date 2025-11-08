@@ -1,4 +1,5 @@
 ﻿using Entities;
+using ServiceContracts.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,11 +35,34 @@ namespace ServiceContracts.DTO
         {
             return base.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return $"Person ID: {PersonID}, Person Name: {PersonName}, Email: {Email}, Date of Birth: " +
+                $"{DateOfBirth?.ToString("dd MMM yyyy")},Gender: {Gender}, Country ID: {CountryID}, Country Name: {CountryName}, " +
+                $"Address: {Address}, Receive News Letters: {ReceiveNewsLetters}";
+        }
+
+        public PersonUpdateRequest ToPersonUpdateRequest()
+        {
+            return new PersonUpdateRequest()
+            {
+                PersonID = this.PersonID,
+                PersonName = this.PersonName,
+                Email = this.Email,
+                DateOfBirth = this.DateOfBirth,
+                Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions),this.Gender,true),
+                Address = this.Address,
+                CountryID = this.CountryID,
+                ReceiveNewsLetters = this.ReceiveNewsLetters,
+            };
+        }
+
     }
 
     public static class PersonExtensions
     {
-        public static PersonResponse ToPersonResponse(this Person person)
+        public static PersonResponse? ToPersonResponse(this Person person)
         {
             return new PersonResponse()
             {
@@ -51,6 +75,7 @@ namespace ServiceContracts.DTO
                 Age = (person.DateOfBirth != null) ? Math.Round((DateTime.Now - person.DateOfBirth.Value).TotalDays / 365.25) : null,
                 Address = person.Address,
                 ReceiveNewsLetters = person.ReceiveNewsLetters,
+                CountryName = person.Country?.CountryName
 
             };
         }

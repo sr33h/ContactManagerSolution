@@ -1,0 +1,111 @@
+﻿@model PersonAddRequest
+
+@{
+    ViewBag.Title = "Create Person";
+}
+
+<a href="~/persons/index" class="link-hover">Back to Persons</a>
+<h2>Create Person</h2>
+
+<div class="container w-50">
+    <form asp-controller="Persons" asp-action="Create" class="" method="post">
+        @*Person Name*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt" for="PersonName">Name : </label></div>
+            <div class="w-75"><input asp-for="PersonName" class="form-input" />
+                <span asp-validation-for="PersonName" class="text-red"></span>
+            </div>
+           
+        </div>
+
+        @*Email*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt" for="Email">E-mail : </label></div>
+            <div class="w-75"><input asp-for="Email" class="form-input"/>
+                <span asp-validation-for="Email"></span>
+            </div>
+            
+        </div>
+
+        @*Date of Birth*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt" for="DateOfBirth">Date of Birth : </label></div>
+            <div class="w-75"><input class="form-input" type="date" id="DateOfBirth" name="DateOfBirth" />
+                <span asp-validation-for="DateOfBirth"></span></div>
+        </div>
+
+        @*Gender*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt">Gender : </label></div>
+            <div class="w-75" style="display:flex;align-items:center;justify-content:space-between">
+                <div>
+                    <input type="radio" id="Male" value="Male" name="Gender" />
+                    <label for="Male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="Female" value="Female" name="Gender" />
+                    <label for="Female">Female</label>
+                </div>
+               <div>
+                    <input type="radio" id="Others" value="Others" name="Gender" />
+                    <label for="Others">Others</label>
+               </div>  
+            </div>
+        </div>
+
+        @*Country*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt" for="CountryID">Country : </label></div>
+            <div class="w-75">
+                <select asp-for="CountryID" class="form-input" asp-items="@ViewBag.Countries">
+                    <option value="">Please select</option>
+                 </select>
+            </div>
+        </div>
+
+        @*Address*@
+        <div class="form-field flex">
+            <div class="w-25"><label class="form-label pt" asp-for="Address">Address : </label></div>
+            <div class="w-75"><textarea asp-for="Address" class="form-input"></textarea></div>
+        </div>
+
+        @*ReceiveNewsLetters*@
+        <div class="form-field flex">
+            <div class="w-25"></div>
+            <div class="w-75">
+                <input type="checkbox" name="ReceiveNewsLetters" id="ReceiveNewsLetters" value="true" />
+                <label for="ReceiveNewsLetters">Receive Newsletters</label>
+            </div>
+        </div>
+
+        @*Address*@
+        <div class="form-field flex">
+            <div class="w-25"></div>
+            <div class="w-75">
+                <button type="submit" class="button button-green-back">Create</button>
+
+                @if(ViewBag.Errors != null)
+                {
+                    <div class="text-red ml">
+                        <ul>
+                        @foreach (string error in ViewBag.Errors)
+                        {
+                            <li class="ml">@error</li>
+                        }
+                        </ul>
+                    </div>   
+                }
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js"
+asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"
+asp-fallback-test="window.jQuery.validator.unobtrusive"
+asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+}

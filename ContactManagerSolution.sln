@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagerApp", "ContactManagerApp\ContactManagerApp.csproj", "{EB5AD36E-9B33-459A-947C-243E9DECB3C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactManagerApp", "ContactManagerApp\ContactManagerApp.csproj", "{EB5AD36E-9B33-459A-947C-243E9DECB3C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagerAppTests", "ContactManagerAppTests\ContactManagerAppTests.csproj", "{BB7BF88A-7BC6-4CBC-A90F-0FD2782D1376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactManagerAppTests", "ContactManagerAppTests\ContactManagerAppTests.csproj", "{BB7BF88A-7BC6-4CBC-A90F-0FD2782D1376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{A9B5CA63-A2CC-43D8-9EC9-647439700ED9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{A9B5CA63-A2CC-43D8-9EC9-647439700ED9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceContracts", "ServiceContracts\ServiceContracts.csproj", "{4110A62C-45AA-4471-AA01-E809C6E69D98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceContracts", "ServiceContracts\ServiceContracts.csproj", "{4110A62C-45AA-4471-AA01-E809C6E69D98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{7B91E627-9049-4434-A393-3D7EB4AC5292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{7B91E627-9049-4434-A393-3D7EB4AC5292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryContracts", "RepositoryContracts\RepositoryContracts.csproj", "{3A8B31D4-2CE8-4479-94D7-DCA776AA7F19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{C570EA4B-BE9F-4F33-B062-A2009FE6E34A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{7B91E627-9049-4434-A393-3D7EB4AC5292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B91E627-9049-4434-A393-3D7EB4AC5292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B91E627-9049-4434-A393-3D7EB4AC5292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8B31D4-2CE8-4479-94D7-DCA776AA7F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8B31D4-2CE8-4479-94D7-DCA776AA7F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8B31D4-2CE8-4479-94D7-DCA776AA7F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8B31D4-2CE8-4479-94D7-DCA776AA7F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C570EA4B-BE9F-4F33-B062-A2009FE6E34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C570EA4B-BE9F-4F33-B062-A2009FE6E34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C570EA4B-BE9F-4F33-B062-A2009FE6E34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C570EA4B-BE9F-4F33-B062-A2009FE6E34A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
